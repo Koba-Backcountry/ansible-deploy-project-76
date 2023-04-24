@@ -1,0 +1,9 @@
+- name: Deploy Redmine Application
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Pull redmine
+      command: docker pull redmine
+
+    - name: Start redmine
+      command: docker run -d -p 8080:3000 redmine

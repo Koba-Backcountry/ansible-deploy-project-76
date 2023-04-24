@@ -1,0 +1,11 @@
+- hosts: all
+  become: true
+
+  roles:
+    - geerlingguy.pip
+
+  tasks:
+    - name: Install Docker module
+      pip:
+        name: docker
+        state: present
